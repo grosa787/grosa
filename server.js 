@@ -1,0 +1,41 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Хранение данных игроков (в реальном приложении используйте базу данных)
+let players = {};
+
+// Получение данных игрока
+app.get('/api/player/:userId', (req, res) => {
+    const userId = req.params.userId;
+    if (players[userId]) {
+        res.json(players[userId]);
+    } else {
+        res.status(404).json({ error: 'Player not found' });
+    }
+});
+
+// Сохранение данных игрока
+app.post('/api/player/:userId', (req, res) => {
+    const userId = req.params.userId;
+    players[userId] = req.body;
+    res.json({ status: 'success' });
+});
+
+// Лидерборд
+app.get('/api/leaderboard', (req, res) => {
+    const leaderboard = Object.values(players)
+        .sort((a, b) => b.balance - a.balance)
+        .slice(0, 10);
+    res.json(leaderboard);
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

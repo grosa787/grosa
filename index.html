@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Startup Tycoon</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Crypto Startup Tycoon</h1>
+            <div class="balance-container">
+                <span id="balance">$1,000</span>
+                <span id="crypto-balance">0 BTC</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div class="character" id="character">
+                    <img src="character.png" alt="Character">
+                    <div class="character-status">Уличный хулиган</div>
+                </div>
+                
+                <div class="businesses">
+                    <div class="business" data-id="slot-machine">
+                        <h3>Игровой автомат</h3>
+                        <p>Доход: $50/час</p>
+                        <p>Цена: $1,000</p>
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                    
+                    <div class="business locked" data-id="casino">
+                        <h3>Казино</h3>
+                        <p>Доход: $500/час</p>
+                        <p>Цена: $10,000</p>
+                        <button class="buy-btn" disabled>Купить</button>
+                    </div>
+                    
+                    <div class="business locked" data-id="crypto-farm">
+                        <h3>Крипто-ферма</h3>
+                        <p>Доход: 0.001 BTC/час</p>
+                        <p>Цена: $50,000</p>
+                        <button class="buy-btn" disabled>Купить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="earn">Заработок</button>
+            <button class="tab-btn" data-tab="profile">Мой профиль</button>
+            <button class="tab-btn" data-tab="settings">Настройки</button>
+        </nav>
+    </div>
+</body>
+</html>
