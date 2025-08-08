@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Penalty Shootout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div class="title">Penalty Shootout</div>
+      <div class="stats">
+        <span id="score">Score: 0</span>
+        <span id="shots">Shots: 0/5</span>
+        <button id="resetBtn" title="Restart (R)">Restart</button>
+      </div>
+      <div class="help">Click and drag to aim and set power. Release to shoot. Hit the green target zones for bonus!</div>
+    </div>
+    <canvas id="game" width="960" height="540" aria-label="Penalty shootout game" role="img"></canvas>
+
+    <script src="game.js"></script>
+  </body>
+</html>
