@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b1521;
+  --panel: #0f2137;
+  --text: #e7eef7;
+  --muted: #9fb3c8;
+  --accent: #3bd671;
+  --accent-2: #2aa8ff;
+  --danger: #ff4d4f;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 600px at 50% 100%, #0c2037 0%, var(--bg) 50%);
+  height: 100%;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+.hud {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px 14px;
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#resetBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent-2);
+  color: #00111f;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#resetBtn:hover { filter: brightness(1.06); }
+
+.help {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#game {
+  display: block;
+  width: min(96vw, 960px);
+  height: auto;
+  margin: 110px auto 24px;
+  border-radius: 12px;
+  background: #154c2e;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.badge {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
